@@ -15,10 +15,20 @@
 <body style='margin: 0; overflow: hidden;'>
     <a-scene
         vr-mode-ui="enabled: false"
-		embedded
+        embedded
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-        <a-entity geometry="primitive: cone" rotation="0 180 0" scale="0.15 0.15 0.15" gps-entity-place="longitude: 20.398404; latitude: -101.223234;"></a-entity>
+        
+        <!-- Aquí cambiamos la figura a un cono, ajustamos su rotación y escala -->
+        <a-entity geometry="primitive: cone" 
+                  material="color: #FF6347;" <!-- Un color visible para el cono --!>
+                  rotation="90 0 0" <!-- Ajuste de rotación para que esté de pie -->
+                  scale="0.5 0.5 0.5" <!-- Ajuste de escala para que sea de tamaño adecuado -->
+                  gps-entity-place="longitude: 20.398404; latitude: -101.223234;">
+        </a-entity>
+
+        <!-- Cámara para la realidad aumentada -->
         <a-camera gps-camera rotation-reader></a-camera>
-	</a-scene>
+
+    </a-scene>
 </body>
 </html>
